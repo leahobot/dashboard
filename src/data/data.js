@@ -1,5 +1,4 @@
 import {
-	FaHome,
 	FaUserFriends,
 	FaUsers,
 	FaHandshake,
@@ -13,25 +12,16 @@ import {
 } from "react-icons/fa";
 import {TbCurrencyNaira} from "react-icons/tb";
 import {RiHandCoinFill} from "react-icons/ri";
-import {
-	HiOutlineBuildingLibrary,
-	HiOutlineUserGroup,
-	HiOutlineDatabase,
-} from "react-icons/hi";
+import {BsBuilding} from "react-icons/bs";
 import {ImDatabase} from "react-icons/im";
 import {MdOutlineSendToMobile, MdTune} from "react-icons/md";
 import {AiOutlineBarChart} from "react-icons/ai";
 import {VscOutput} from "react-icons/vsc";
 import {TbDiscount2} from "react-icons/tb";
-import {FiUsers} from "react-icons/fi";
+import {FiUsers, FiDatabase} from "react-icons/fi";
 import {GrDocumentStore} from "react-icons/gr";
 
 export const links = [
-	{
-		title: "Dashboard",
-		icon: <FaHome />,
-	},
-
 	{
 		title: "CUSTOMERS",
 		links: [
@@ -83,7 +73,7 @@ export const links = [
 			},
 			{
 				name: "Savings Product",
-				icon: <HiOutlineBuildingLibrary />,
+				icon: <BsBuilding />,
 			},
 			{
 				name: "Fees ans Charges",
@@ -138,7 +128,7 @@ export const userData = [
 		number: 2453,
 	},
 	{
-		icon: <HiOutlineUserGroup />,
+		icon: <FaUsers />,
 		title: "ACTIVE USERS",
 		number: 2453,
 	},
@@ -148,7 +138,7 @@ export const userData = [
 		number: 12453,
 	},
 	{
-		icon: <HiOutlineDatabase />,
+		icon: <FiDatabase />,
 		title: "USERS WITH SAVINGS",
 		number: 102453,
 	},

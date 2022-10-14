@@ -1,0 +1,52 @@
+.sidebar{
+      padding-top: 2.5rem;
+      font-size: 1.6rem;
+
+      img{
+            width: 45%;
+            object-fit: cover;
+            margin-bottom: 5rem;
+            padding-left: 2rem;       
+      }
+            
+      a,
+      .org{
+      display: flex;
+      align-items: center;
+      gap: 1rem;  
+      text-decoration: none;          
+      }
+
+      .org{
+      margin-bottom: 2.7rem;
+      padding: 1.3rem 0 1.3rem 2rem;
+      color: var(--secondary-color);
+            &:hover{
+            color: var(--secondary-color);
+            background-color: var(--hover-color);
+            }
+      }
+
+      .title{
+      color: var(--secondary-color);  
+      padding: 3rem 0 1rem 0; 
+      padding-left: 2rem;            
+      }
+
+      .link{
+      color: var(--light-blue);   
+      padding: 1.3rem 0 1.3rem 2rem;
+            &:hover{
+            color: var(--secondary-color);
+            background-color: var(--hover-color);
+      }
+}
+
+
+}
+
+.activeLink{
+      background-color: var(--hover-color);
+      border-left: 5px solid var(--active-color);
+      color: var(--secondary-color);
+}

@@ -1,0 +1,38 @@
+.home{
+position: relative;
+width: 100%;
+height: 160vh;
+background-color: var(--bg-color);
+
+      .header{
+      width: 100%;
+      height: 8rem;
+      background-color: var(--white-color);
+      padding-left: 30rem;
+      box-shadow: 0 1px 10px rgba($color: #000000, $alpha: 0.04);
+      }
+
+      .content{
+            .sidebar{
+            position: absolute;
+            top: 0;
+            left: 0;
+            // bottom: 0;
+            width: 20%;
+            height: 100%;
+            // z-index: 1;
+            background-color: var(--white-color);
+            box-shadow: 1px 0 10px rgba($color: #000000, $alpha: 0.04);
+            }
+
+
+            .user-data{   
+            width: 73%;
+            height: 100vh;
+            margin: 10rem 0 0 32rem;
+            background-color: var(--bg-color);
+            }
+            
+      }
+
+}

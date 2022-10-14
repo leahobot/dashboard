@@ -4,6 +4,7 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: var(--work-sans-font);
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -18,6 +19,8 @@ html{
 
   --primary-color : #39CDCC;
   --secondary-color: #213F7D;
+  --light-blue: #93a4c7;
+  --bg-color: #FBFBFB;
   --text-color : #545F7D;
   --white-color: #FFFFFF;
   --purple-color: #DF18FF;
@@ -27,5 +30,6 @@ html{
   --yellow-color: #E9B200;
   --dark-red: #E4033B;
   --green-color: #39CD62;
-  --hover-color: #39CDCC;
+  --active-color: #39CDCC;
+  --hover-color: #39cdcd1f;
 }
