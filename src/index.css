@@ -15,9 +15,17 @@ html{
 :root{
   --work-sans-font: 'Work Sans', sans-serif;
   --roboto-font-: 'Roboto', sans-serif;
+
   --primary-color : #39CDCC;
   --secondary-color: #213F7D;
   --text-color : #545F7D;
   --white-color: #FFFFFF;
   --purple-color: #DF18FF;
+  --blue-color: #5718FF;
+  --red-color: #F55F44;
+  --pink-color: #FF3366;
+  --yellow-color: #E9B200;
+  --dark-red: #E4033B;
+  --green-color: #39CD62;
+  --hover-color: #39CDCC;
 }
