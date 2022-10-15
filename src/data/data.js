@@ -18,8 +18,7 @@ import {MdOutlineSendToMobile, MdTune} from "react-icons/md";
 import {AiOutlineBarChart} from "react-icons/ai";
 import {VscOutput} from "react-icons/vsc";
 import {TbDiscount2} from "react-icons/tb";
-import {FiUsers, FiDatabase} from "react-icons/fi";
-import {GrDocumentStore} from "react-icons/gr";
+import {IoFilter} from "react-icons/io5";
 
 export const links = [
 	{
@@ -121,25 +120,33 @@ export const links = [
 	},
 ];
 
-export const userData = [
+export const tableHead = [
 	{
-		icon: <FiUsers />,
-		title: "USERS",
-		number: 2453,
+		title: "ORGANIZATION",
+		icon: <IoFilter />,
 	},
 	{
-		icon: <FaUsers />,
-		title: "ACTIVE USERS",
-		number: 2453,
+		title: "USERNAME",
+		icon: <IoFilter />,
 	},
 	{
-		icon: <GrDocumentStore />,
-		title: "USERS WITH LOAN",
-		number: 12453,
+		title: "EMAIL",
+		icon: <IoFilter />,
 	},
 	{
-		icon: <FiDatabase />,
-		title: "USERS WITH SAVINGS",
-		number: 102453,
+		title: "PHONE NUMBER",
+		icon: <IoFilter />,
+	},
+	{
+		title: "DATE JOINED",
+		icon: <IoFilter />,
+	},
+	{
+		title: "STATUS",
+		icon: <IoFilter />,
+	},
+	{
+		title: "",
+		icon: "",
 	},
 ];

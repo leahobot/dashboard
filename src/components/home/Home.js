@@ -1,5 +1,5 @@
 import React from "react";
-import {Header, SideBar, UsersData} from "..";
+import {Header, SideBar, UsersData, Pagination} from "..";
 import styles from "./Home.module.scss";
 
 const UsersPage = () => {
@@ -14,6 +14,8 @@ const UsersPage = () => {
 				</div>
 				<div className={styles["user-data"]}>
 					<UsersData />
+
+					<Pagination />
 				</div>
 			</div>
 		</div>
