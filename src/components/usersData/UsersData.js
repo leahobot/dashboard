@@ -2,14 +2,24 @@ import React from "react";
 import styles from "./UsersData.module.scss";
 import {UsersInfo} from "..";
 import {FiUsers, FiDatabase} from "react-icons/fi";
-import {AiOutlineDatabase} from "react-icons/ai";
+import {AiOutlineDatabase, AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
 import {FaUsers} from "react-icons/fa";
+import {useStateContext} from "../../context/ContextProvider";
 
 const UserData = () => {
+	const {setToggleSideBar, toggleSideBar} = useStateContext();
+
 	return (
 		<div className={styles.users}>
 			<div className={styles["user-summary"]}>
-				<p className={styles.users}>Users</p>
+				<div className={styles.users}>
+					<p>Users</p>
+					<p
+						className={styles.menu}
+						onClick={() => setToggleSideBar((previous) => !previous)}>
+						{toggleSideBar ? <AiOutlineClose /> : <AiOutlineMenu />}
+					</p>
+				</div>
 				<div className={styles.summary}>
 					<div className={styles["summary-container"]}>
 						<span className={styles["purple-bg"]}>

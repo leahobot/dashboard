@@ -1,35 +1,231 @@
 .users-table{
-      width: 100%;
-      height: 64rem;
-      padding: 2rem 1.3rem;
-      background-color: var(--white-color);
-      box-shadow:rgba(33, 63, 125, 0.06);
-      border: 1px solid rgba(33, 63, 125, 0.06);
-      border-radius: 4px;
+            position: relative;
+            width: 100%;
+            padding: 2rem;
+            background-color: var(--white-color);
+            box-shadow:rgba(33, 63, 125, 0.06);
+            border: 1px solid rgba(33, 63, 125, 0.06);
+            border-radius: 4px;
 
-      thead{
-            .table-head{
-                  th{
-                        color: var(--text-color);
-                        font-size: 1.2rem;
-                        cursor: pointer;
-                        text-align: left;
-                        padding-bottom: 1rem;
+            thead{
+                  .table-head{
+                        th{
+                              color: var(--secondary-color);
+                              padding-bottom: 1rem;
+                              p{
+                                    display: flex;
+                                    font-size: 1.3rem;
+                                    align-items: flex-start;
+                                    gap: 0.5rem;
+                                    cursor: pointer;
+                              }
+                        }
                   }
             }
-      }
 
-      tbody{
+            tbody{
 
-            .users{
-                  padding: 1rem 0;
-                  
-                  td{
-                        color: var(--text-color);
+                  .users{
                         padding: 1rem 0;
-                        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
-                        font-size: 1.1rem;
+                        
+                        td{
+                              color: var(--text-color);
+                              padding: 1.8rem 0;
+                              border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+                              font-size: 1.3rem;
+                        }
+
+                        .user-status{
+                              padding: 1rem 1.2rem;
+                              border-radius: 8px;
+                              font-weight: 500;
+                        }
+                        
+                        .yellowBg{
+                              color : var(--yellow-color);
+                              background-color: #e9b3001c;
+                        }
+
+                        .greenBg{
+                              color : var(--green-color);
+                              background-color: #39cd6312;
+                        }
+
+                        .redBg{
+                              color : var(--dark-red);
+                              background-color: #e4033b14;
+                        }
+
+                        .moreIcon{
+                              cursor: pointer;
+                             
+
+                              &:hover{
+                                    color: var(--primary-color)
+                              }
                   }
             }
       }
+
+}
+
+.status-modal{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      top:50%;
+      right: 10%;
+      border: 1px solid rgba(84, 95, 125, 0.04);
+      box-shadow: 3px 5px 20px 0 rgba($color: #000000, $alpha: 0.04);
+      width: 18rem;
+      height: 13rem;
+      background-color: var(--white-color);
+      font-weight: 600;
+      font-size: 1.3rem;
+      
+      div, 
+      a{
+            color: var(--text-color);
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;;
+
+            &:hover{
+                  color: var(--primary-color);
+            }
+      }
+}
+
+.filter-modal{
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+       position: absolute;
+       top: 40%;
+       left: 22%;
+       height: 60rem;
+       width: 27rem;
+       background-color: var(--white-color);
+       color: var(--text-color);
+       padding: 2rem 1.5rem;
+       border: 1px solid rgba(33, 63, 125, 0.06);
+       box-shadow: 3px 5px 20px 0 rgba($color: #000000, $alpha: 0.04);
+       
+      label{
+            font-size: 1.5rem;
+            font-weight: 500;
+      }
+      
+      input,
+      select{
+            width: 100%;
+            font-size: 1.5rem;
+            outline: 0;
+            border-radius: 8px;
+            border: 1px solid rgba(84, 95, 125, 0.149);
+            padding: 1rem;
+            color: var(--text-color);
+            margin-top: 1rem;
+      }
+
+      button{
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 1rem 2.8rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            &:hover{
+                  opacity: 0.6;
+            }
+            &:active{
+                  transform: translateY(3px);
+            }
+      }
+
+      .reset{
+            margin-right: 2rem;
+            border: 3px solid var(--text-color);
+            color: var(--text-color);
+            background-color: var(--white-color);
+      }
+      
+      .submit{
+            border: 3px solid transparent;
+            color: var(--white-color);
+            background-color: var(--primary-color);
+
+      }
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+ .users-table{
+            width: 100%;
+            padding: 1.6rem;
+
+            thead{
+                  .table-head{
+                        th{
+                              padding-bottom: 0.6rem;
+                              p{
+                                    font-size: 1.3rem;
+                                    gap: 0.3rem;
+                                    margin-right: 0.8rem;
+                              }
+                        }
+                  }
+            }
+
+            tbody{
+
+                  .users{
+                        padding: 1rem 0;
+                        
+                        td{
+                              padding: 1.2rem 0;
+                              font-size: 1.2rem;
+                        }
+                  }
+            }
+      }
+
+}
+
+@media screen and (max-width: 600px) {
+      .users-table{
+            padding: 1rem 1.5rem;
+            margin-top: 3rem;
+
+            thead{
+                  .table-head{
+                        th{
+                              padding-bottom: 0;
+                              p{
+                                    font-size: 1.25rem;
+                                    margin-right: 0.8rem;
+                              }
+                        }
+                  }
+            }
+
+            tbody{
+
+                  .users{
+                        padding: 1rem 0;
+                        
+                        td{
+                              padding: 1rem 0;
+                              font-size: 1.1rem;
+                        }
+                  }
+            }
+      }
+
 }

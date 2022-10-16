@@ -61,3 +61,43 @@ header{
             }
       }
 }
+
+@media screen and(max-width: 600px) {
+      header{
+            font-size: 1.2rem;
+            padding:0 0 0 2rem;
+            width: 100%;
+
+            .left{
+                  height: 3.5rem;
+                  width: 45%;
+                  border-radius: 6px;
+                  padding-left: 0.5rem;
+
+                  input{
+                        font-size: 1rem;
+                        width: 60%;
+                  }
+
+                  span{
+                        border-radius: 0 6px 6px 0;
+                        width: 4rem;
+                  }
+            }
+
+            .right{
+            width: 50%;
+            gap: 0.7rem;
+                  a{
+                        margin-left: 1rem;
+                  }
+                  img{
+                        height: 3rem;
+                        width: 3rem;
+
+                  }
+
+                
+            }
+      }
+}

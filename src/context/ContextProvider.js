@@ -5,20 +5,83 @@ import {apiEndpoint} from "../config";
 const StateContext = createContext();
 
 export const ContextProvider = ({children}) => {
-	const [users, setUsers] = useState();
+	const [users, setUsers] = useState(null);
+	const [searchValue, setSearchValue] = useState("");
+	const [filteredUsers, setFilteredUsers] = useState([]);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [usersPerPage] = useState(10);
+	const [toggleSideBar, setToggleSideBar] = useState(false);
 
 	useEffect(() => {
 		try {
 			const getUsers = async () => {
 				const {data} = await axios.get(apiEndpoint);
 				setUsers(data);
-				localStorage.setItem("users", data);
+				localStorage.setItem("users", JSON.stringify(data));
 			};
 			getUsers();
 		} catch (err) {
 			console.log(err.message);
 		}
 	}, []);
+
+	useEffect(() => {
+		const tempUsers = users
+			? users.filter(
+					(user) =>
+						user.userName.toLowerCase().includes(searchValue.toLowerCase()) ||
+						user.orgName.toLowerCase().includes(searchValue.toLowerCase()) ||
+						user.email.toLowerCase().includes(searchValue.toLowerCase()),
+			  )
+			: [];
+
+		setFilteredUsers(tempUsers);
+	}, [searchValue, users]);
+
+	//Limit page numbers shown
+	const [pageNumberLimit] = useState(5);
+	const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
+	const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
+
+	const pageNumbers = [];
+	const totalUsers = filteredUsers.length;
+	const totalPages = totalUsers / usersPerPage;
+
+	//Get Current Users
+	const indexOfLastUser = currentPage * usersPerPage;
+	const indexOfFirstUser = indexOfLastUser - usersPerPage;
+	const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
+
+	//Paginate
+	const paginate = (pageNumber) => {
+		setCurrentPage(pageNumber);
+	};
+
+	//Go to next Page
+	const paginateNext = () => {
+		setCurrentPage(currentPage + 1);
+
+		//Show next set of page numbers
+		if (currentPage + 1 > maxPageNumberLimit) {
+			setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
+			setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+		}
+	};
+
+	//Go to prev page
+	const paginatePrev = () => {
+		setCurrentPage(currentPage - 1);
+
+		//Show prev set of page numbers
+		if ((currentPage - 1) % pageNumberLimit === 0) {
+			setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
+			setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+		}
+	};
+
+	for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
+		pageNumbers.push(i);
+	}
 
 	const createdAt = (str) => {
 		const date = str.slice(0, 9).split("-");
@@ -60,63 +123,14 @@ export const ContextProvider = ({children}) => {
 		return slicedPhoneNumber;
 	};
 
-	const [currentPage, setCurrentPage] = useState(1);
-	const [usersPerPage] = useState(10);
-
-	const pageNumbers = [];
-	const totalUsers = users ? users.length : null;
-	const totalPages = totalUsers / usersPerPage;
-
-	//Limit page numbers shown
-	const [pageNumberLimit] = useState(5);
-	const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
-	const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-
-	//Get Current Users
-	const indexOfLastUser = currentPage * usersPerPage;
-	const indexOfFirstUser = indexOfLastUser - usersPerPage;
-	const currentUsers = users
-		? users.slice(indexOfFirstUser, indexOfLastUser)
-		: [];
-
-	//Paginate
-	const paginate = (pageNumber) => {
-		setCurrentPage(pageNumber);
-	};
-
-	//Go to next Page
-	const paginateNext = () => {
-		setCurrentPage(currentPage + 1);
-
-		//Show next set of page numbers
-		if (currentPage + 1 > maxPageNumberLimit) {
-			setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
-			setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
-		}
-	};
-
-	//Go to prev page
-	const paginatePrev = () => {
-		setCurrentPage(currentPage - 1);
-
-		//Show prev set of page numbers
-		if ((currentPage - 1) % pageNumberLimit === 0) {
-			setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
-			setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit);
-		}
-	};
-
-	for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
-		pageNumbers.push(i);
-	}
-
 	return (
 		<div>
 			<StateContext.Provider
 				value={{
+					users,
+					toggleSideBar,
+					setToggleSideBar,
 					currentUsers,
-					editPhoneNumber,
-					createdAt,
 					totalPages,
 					totalUsers,
 					paginatePrev,
@@ -126,6 +140,11 @@ export const ContextProvider = ({children}) => {
 					currentPage,
 					maxPageNumberLimit,
 					minPageNumberLimit,
+					searchValue,
+					setSearchValue,
+					editPhoneNumber,
+					createdAt,
+					setFilteredUsers,
 				}}>
 				{children}
 			</StateContext.Provider>

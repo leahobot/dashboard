@@ -86,3 +86,58 @@ footer{
 .hidden {
 display: none;
 }
+
+
+@media screen and (max-width:600px) {
+      .pagination,
+      .left-container,
+      .right-container,
+      .total-users,
+      .paginate{
+            font-size: 1rem;
+
+            .left-container{
+                  width: 50%;
+                  justify-content: flex-start;
+                  gap: 0.5rem;
+
+                  .total-users{
+                        justify-content: center;
+                        gap: 0.4rem;
+                        padding: 0.7 0;
+                        width: 5rem;
+                  }
+            }
+
+            .right-container{
+                  width: 50%;
+
+                  .paginate{
+                        padding: 0.6rem 0;
+                        width: 2rem; 
+                  }
+
+                  
+                  .page{
+                        font-weight: 500;
+                        height: 2.5rem;
+                        width: 2rem;
+                  }
+                  
+                  .pageNum{
+                        font-size: 1.4rem;
+                        height: 2.5rem;
+                        width: 2rem;
+            
+                  }
+
+            }
+            
+      }
+
+      footer{
+            margin-top: 3rem;
+      }
+
+
+}
