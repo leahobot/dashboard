@@ -3,7 +3,7 @@
   Admin Dashboard
 </h1>
 <p align="center">
-  Visit the page here ===>>> <a href="" target="_blank">Admin Dashboard</a>
+  Visit the page here ===>>> <a href=" leahobot.github.io/lendsqr-fe-test" target="_blank">Admin Dashboard</a>
 
 
 ![demo](https://github.com/leahobot/lendsqr-fe-test/blob/main/src/assets/demo-2.JPG)
