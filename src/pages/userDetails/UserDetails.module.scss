@@ -1,12 +1,12 @@
 .home{
 position: relative;
 width: 100%;
-height: 165vh;
+height: 200vh;
 background-color: var(--bg-color);
 
       .header{
       width: 100%;
-      height: 8rem;
+      height: 6.5rem;
       background-color: var(--white-color);
       padding-left: 30rem;
       box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
@@ -17,7 +17,7 @@ background-color: var(--bg-color);
             position: absolute;
             top: 0;
             left: 0;
-            width: 20%;
+            width: 25%;
             height: 100%;
             z-index: 20;
             background-color: var(--white-color);
@@ -28,8 +28,8 @@ background-color: var(--bg-color);
 
             .user-data{   
             width: 75%;
-            height: 153vh;
-            margin: 6rem 0 0 30rem;
+            height: 170vh;
+            margin: 6rem 0 0 32rem;
             background-color: var(--bg-color);
             }
       }
@@ -65,6 +65,7 @@ background-color: var(--bg-color);
 
 @media screen and (max-width:600px) {
       .home{
+             background-color: var(--bg-color);
             .content{
                   .sidebar{
                   width: 60%;
@@ -77,6 +78,10 @@ background-color: var(--bg-color);
       }
 
 }
+
+
+
+     
 
 
 
