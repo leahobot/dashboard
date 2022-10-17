@@ -1,5 +1,5 @@
 import {Routes, Route, Navigate} from "react-router-dom";
-import {Login, Dashboard, Users, UserDetails, NotFound} from "./pages";
+import {Login, Dashboard, Users, UserDetails} from "./pages";
 
 function App() {
 	return (
@@ -9,9 +9,10 @@ function App() {
 			<Route path='/users' element={<Users />} />
 			<Route path='/dashboard' element={<Dashboard />} />
 			<Route path='/user-details/:id' element={<UserDetails />} />
-			<Route path='*' element={<NotFound />} />
 		</Routes>
 	);
 }
 
 export default App;
+
+// <Route path='*' element={<NotFound />} />
