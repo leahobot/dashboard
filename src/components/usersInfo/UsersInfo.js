@@ -4,6 +4,7 @@ import styles from "./UsersInfo.module.scss";
 import {FiMoreVertical} from "react-icons/fi";
 import {tableHead} from "../../data/data";
 import {BsEye} from "react-icons/bs";
+import {MdOutlineClose} from "react-icons/md";
 import {TbUserX, TbUserCheck} from "react-icons/tb";
 import {useStateContext} from "../../context/ContextProvider";
 
@@ -22,12 +23,9 @@ const UsersInfo = () => {
 	const [status, setStatus] = useState("Pending");
 	const [userId, setUserId] = useState("");
 
-	// const [statusId, setStatusId] = useState("");
-
 	const displayBox = (id) => {
 		setShowModal((previous) => !previous);
 		setUserId(id);
-		// setStatusId(id);
 	};
 
 	const activate = (id) => {
@@ -121,11 +119,11 @@ const UsersInfo = () => {
 							<p>View User</p>
 						</Link>
 					</div>
-					<div onClick={() => blacklist(userId)}>
+					<div onClick={(e) => blacklist(userId)}>
 						<TbUserX />
 						<p>Blacklist User</p>
 					</div>
-					<div onClick={() => activate(userId)}>
+					<div onClick={(e) => activate(userId, e)}>
 						<TbUserCheck />
 						<p>Activate User</p>
 					</div>
@@ -135,10 +133,17 @@ const UsersInfo = () => {
 				<form
 					className={styles["filter-modal"]}
 					onSubmit={(e) => submitForm(e)}>
+					<MdOutlineClose
+						className={styles.icon}
+						onClick={() => setShowFilter(false)}
+					/>
 					<div>
 						<label>Organization</label>
-						<select value={org} onChange={(e) => setOrg(e.target.value)}>
-							<option>Select</option>
+						<select
+							value={org}
+							onChange={(e) => setOrg(e.target.value)}
+							required>
+							<option value=''>Select</option>
 							{users
 								? users.map((user) => (
 										<option key={user.id} value={user.orgName}>
@@ -155,6 +160,7 @@ const UsersInfo = () => {
 							onChange={(e) => setUserName(e.target.value)}
 							type='text'
 							placeholder='User'
+							required
 						/>
 					</div>
 					<div>
@@ -163,7 +169,7 @@ const UsersInfo = () => {
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							type='email'
-							placeholder='email'
+							placeholder='Email'
 						/>
 					</div>
 					<div>

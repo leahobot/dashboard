@@ -1,0 +1,114 @@
+.container{
+      font-size: 1.2rem;
+      margin-top: 3rem;
+      width: 100%;
+      box-shadow: 3px 5px 20px 0 rgba($color: #000000, $alpha: 0.04);
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      border-radius: 4px;
+      background-color: white;
+      padding: 2rem 2rem 2rem 3rem; 
+      color: var(--secondary-color);
+      
+      .summary{
+            h4{
+                  font-size: 1.6rem;
+            }
+
+            &-body{
+                  width: 100%;
+                  display: flex;
+                  justify-content: flex-start;
+                  flex-wrap: wrap;
+
+                  &-span {
+                        margin-right: 10rem;
+                        margin-top: 3rem;
+                              p:last-child{
+                              font-size: 1.6rem;
+                              font-weight: 500;
+                              margin-top: 1rem;
+                              }
+
+                  }
+            }
+      }
+      .line{
+            width: 100rem;
+            background-color:  #545f7d2c;
+            margin: 3.5rem 0 1.5rem 0;
+            height: 1px;
+      }
+      
+}
+
+@media screen and(max-width: 850px) {
+      .container{
+            font-size: 1.2rem;
+            padding: 2rem 2rem 2rem 2rem; 
+            
+            .summary{
+                  h4{
+                        font-size: 1.4rem;
+                  }
+
+                  &-body{
+
+                        &-span {
+                              margin-right: 5rem;
+                              margin-top: 1.6rem;
+                              margin-bottom: 1.5rem;
+
+                               p:last-child{
+                              font-size: 1.6rem;
+                              font-weight: 500;
+                              margin-top: 0.7rem;
+                              }
+                        }
+                  }
+            }
+            .line{
+                  width: 65rem;
+                  background-color:  #545f7d1e;
+                  margin: 3rem 0 1.5rem 0;
+            }
+            
+      }
+
+}
+
+@media screen and(max-width:600px){
+      .container{
+      font-size: 1.1rem;
+      padding: 2rem 2rem 2rem 2rem; 
+      
+      .summary{
+            h4{
+                  font-size: 1.4rem;
+            }
+
+            &-body{
+
+
+                  &-span {
+                        margin-right: 3rem;
+                        margin-top: 1.2rem;
+                        margin-bottom: 1.3rem;
+                              p:last-child{
+                              font-size: 1.4rem;
+                              font-weight: 500;
+                              margin-top: 0.5rem;
+                              }
+
+                  }
+            }
+      }
+      .line{
+            width: 31rem;
+            background-color:  #545f7d23;
+            margin: 3.5rem 0 1.5rem 0;
+            height: 1px;
+      }
+      
+}
+
+}

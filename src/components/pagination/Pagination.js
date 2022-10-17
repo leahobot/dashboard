@@ -32,7 +32,7 @@ const Pagination = () => {
 							? `${styles.hidden}`
 							: `${styles.paginate}`
 					}
-					onClick={() => paginatePrev}>
+					onClick={paginatePrev}>
 					<AiOutlineLeft />
 				</li>
 
@@ -58,7 +58,7 @@ const Pagination = () => {
 							? `${styles.hidden}`
 							: `${styles.paginate}`
 					}
-					onClick={() => paginateNext}>
+					onClick={paginateNext}>
 					<AiOutlineRight />
 				</li>
 			</ul>
