@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/lendsqr-fe-test/static/css/main.a45a9993.css",
-    "main.js": "/lendsqr-fe-test/static/js/main.62d452f1.js",
+    "main.css": "/lendsqr-fe-test/static/css/main.331a9b92.css",
+    "main.js": "/lendsqr-fe-test/static/js/main.082de93c.js",
     "static/js/787.d1cf12e5.chunk.js": "/lendsqr-fe-test/static/js/787.d1cf12e5.chunk.js",
     "static/media/image.png": "/lendsqr-fe-test/static/media/image.d086c8797a66d25da158.png",
     "static/media/user-avatar.png": "/lendsqr-fe-test/static/media/user-avatar.0d17eff8933e7bc2599a.png",
     "static/media/logo.svg": "/lendsqr-fe-test/static/media/logo.7370afa69c4cab86ef17947d4753c806.svg",
     "index.html": "/lendsqr-fe-test/index.html",
-    "main.a45a9993.css.map": "/lendsqr-fe-test/static/css/main.a45a9993.css.map",
-    "main.62d452f1.js.map": "/lendsqr-fe-test/static/js/main.62d452f1.js.map",
+    "main.331a9b92.css.map": "/lendsqr-fe-test/static/css/main.331a9b92.css.map",
+    "main.082de93c.js.map": "/lendsqr-fe-test/static/js/main.082de93c.js.map",
     "787.d1cf12e5.chunk.js.map": "/lendsqr-fe-test/static/js/787.d1cf12e5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a45a9993.css",
-    "static/js/main.62d452f1.js"
+    "static/css/main.331a9b92.css",
+    "static/js/main.082de93c.js"
   ]
 }
