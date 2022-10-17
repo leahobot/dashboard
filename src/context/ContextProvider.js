@@ -45,13 +45,13 @@ export const ContextProvider = ({children}) => {
 
 	const pageNumbers = [];
 	const totalUsers = filteredUsers.length;
-	const totalPages = totalUsers / usersPerPage;
+	const totalPages = Math.ceil(totalUsers / usersPerPage);
 
 	//Get Current Users
+
 	const indexOfLastUser = currentPage * usersPerPage;
 	const indexOfFirstUser = indexOfLastUser - usersPerPage;
 	const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
-
 	//Paginate
 	const paginate = (pageNumber) => {
 		setCurrentPage(pageNumber);
@@ -79,7 +79,7 @@ export const ContextProvider = ({children}) => {
 		}
 	};
 
-	for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
+	for (let i = 1; i <= totalPages; i++) {
 		pageNumbers.push(i);
 	}
 

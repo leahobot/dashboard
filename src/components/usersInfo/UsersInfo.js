@@ -19,19 +19,29 @@ const UsersInfo = () => {
 	const [userName, setUserName] = useState("");
 	const [phoneNumber, setPhoneNumber] = useState("");
 	const [dateTime, setDateTime] = useState("");
-
-	// const [userId, setUserId] = useState(null);
-
 	const [status, setStatus] = useState("Pending");
+	const [userId, setUserId] = useState("");
 
-	const activate = () => {
-		setShowModal(false);
-		setStatus("Active");
+	// const [statusId, setStatusId] = useState("");
+
+	const displayBox = (id) => {
+		setShowModal((previous) => !previous);
+		setUserId(id);
+		// setStatusId(id);
 	};
 
-	const blacklist = (sta) => {
+	const activate = (id) => {
 		setShowModal(false);
-		setStatus("Blacklisted");
+		if (id) {
+			setStatus("Active");
+		}
+	};
+
+	const blacklist = (id) => {
+		setShowModal(false);
+		if (id) {
+			setStatus("Blacklisted");
+		}
 	};
 
 	const statusBg = (status) => {
@@ -65,15 +75,6 @@ const UsersInfo = () => {
 		setShowFilter(false);
 	};
 
-	// const [allUsers, setAllUsers] = useState();
-
-	// useEffect(() => {
-	// 	const users = JSON.parse(localStorage.getItem("users"));
-	// 	if (users) {
-	// 		setAllUsers(users);
-	// 	}
-	// });
-
 	return (
 		<div>
 			<table className={styles["users-table"]}>
@@ -104,7 +105,7 @@ const UsersInfo = () => {
 								<td>
 									<FiMoreVertical
 										className={styles.moreIcon}
-										onClick={() => setShowModal((previous) => !previous)}
+										onClick={() => displayBox(user.id)}
 									/>
 								</td>
 							</tr>
@@ -115,16 +116,16 @@ const UsersInfo = () => {
 			{showModal && (
 				<div className={styles["status-modal"]}>
 					<div onClick={() => setShowModal(false)}>
-						<Link to={`/user-details/$`}>
+						<Link to={`/user-details/${userId}`}>
 							<BsEye />
 							<p>View User</p>
 						</Link>
 					</div>
-					<div onClick={() => blacklist()}>
+					<div onClick={() => blacklist(userId)}>
 						<TbUserX />
 						<p>Blacklist User</p>
 					</div>
-					<div onClick={() => activate()}>
+					<div onClick={() => activate(userId)}>
 						<TbUserCheck />
 						<p>Activate User</p>
 					</div>

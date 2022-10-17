@@ -1,0 +1,149 @@
+.container{
+      width: 100%;
+      height: 100%;
+      margin-left: 2rem;
+
+      .user-info{
+            .link{
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 2rem
+
+            }
+      }
+      
+      .user{
+            color: var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            
+            p{
+                  font-size: 2.4rem;
+                  font-weight: 500;
+            }
+
+            button{
+                  padding: 1rem 2rem;
+                  background-color: var(--white-color);
+                  border-radius: 8px;
+                  font-weight: 600;
+                  font-size: 1.4rem;
+                  border: 2px solid;
+                  &:active{
+                        transform: translateY(3px);
+                  }
+            }
+
+            .btn-blackList{
+                  border-color: var(--dark-red);
+                  color: var(--dark-red);
+                  &:hover{
+                        background-color: var(--dark-red);
+                        color: var(--white-color);
+                  }
+            }
+
+            .btn-activate{
+                  border-color: var(--primary-color);
+                  color: var(--primary-color);
+                  margin-left: 1.5rem;
+                  &:hover{
+                        background-color: var(--primary-color);
+                        color: var(--white-color);
+                  }
+            }
+      }
+      .summary{
+            font-size: 1.4rem;
+            margin-top: 4rem;
+            width: 100%;
+            box-shadow: 3px 5px 20px 0 rgba($color: #000000, $alpha: 0.04);
+            border: 1px solid rgba(33, 63, 125, 0.06);
+            border-radius: 4px;
+            background-color: white;
+            padding: 2rem 2rem 0 3rem;
+
+            .basic-summary{
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  gap: 4rem;
+                  width: 100%;
+                  margin-bottom: 6rem;
+
+                  img{
+                        height: 10rem;
+                        width: 10rem;
+                        object-fit: cover;
+                        border-radius: 50%;
+                  }
+
+                  .name{
+                        font-size: 2.2rem;
+                        margin-bottom: 1rem;
+                        font-weight: 500;
+                        color: var(--secondary-color);
+                  }
+
+                  .acc-num,
+                  .tier,
+                  .amt{
+                        color: var(--text-color); 
+                  }
+
+                 .tier{
+                        font-weight: 500;
+                        margin-bottom: 0.5rem;
+                  }
+                  
+                  .icons{
+                        color: var(--yellow-color);
+                        font-size: 1.7rem;
+                  }
+
+                  .amount{
+                        color: var(--secondary-color);
+                        font-size: 2.2rem;
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                  }
+                  .line{
+                        height: 8rem;
+                        width: 1px;
+                        background-color: #545f7d21;
+                  }
+                  
+
+            }
+
+            .other-summary{
+                  ul{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        list-style: none;
+                        font-size: 1.6rem;
+                        color: var(--text-color);
+                        padding-right: 2rem;
+
+                        li{
+                              padding-bottom: 1rem;
+                        }
+
+                        li:first-child{
+                              border-bottom: 3px solid var(--primary-color);
+                              color: var(--primary-color);
+                              font-weight: 500;
+                              width: 16rem;
+                              text-align: center;
+                        }
+                  }
+            }
+      }
+}

@@ -9,7 +9,7 @@ const NotFound = () => {
 			<h1>Page Not Found</h1>
 			<Link to='/'>
 				<IoArrowBack />
-				Go to Home
+				Go to Login Page
 			</Link>
 		</section>
 	);
