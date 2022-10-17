@@ -6,8 +6,8 @@
   Visit the page here ===>>> <a href="" target="_blank">Admin Dashboard</a>
 
 
-![demo](https://github.com/leahobot/portfolio/blob/main/src/assets/demo-2.JPG)
-![demo](https://github.com/leahobot/portfolio/blob/main/src/assets/demo-1.JPG)
+![demo](https://github.com/leahobot/lendsqr-fe-test/blob/main/src/assets/demo-2.JPG)
+![demo](https://github.com/leahobot/lendsqr-fe-test/blob/main/src/assets/demo-1.JPG)
 
 
 # Lendsqr-fe-test
@@ -27,13 +27,16 @@ The application is developed with:
 5. Not Found Page
 
 
-###### The users information is fetched with axios to populate the users page, and the data is immediately stored in local storage. On the users page, the fillowing functionality was inplemented:
+
+The users information is fetched with axios to populate the users page, and the data is immediately stored in local storage. On the users page, the fillowing functionality was inplemented:
+
 
 - Pagination
 - Search functionality on the input field
 - Filter
 
-###### The routing of the user details page is dynamic and is data is retrieved from local storage to populate the page. To go to the user details page from the users page; click on the more icon (three dots) and then view user. 
+
+The routing of the user details page is dynamic and is data is retrieved from local storage to populate the page. To go to the user details page from the users page; click on the more icon (three dots) and then view user. 
 
 
 
